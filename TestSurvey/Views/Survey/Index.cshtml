@@ -1,4 +1,4 @@
-﻿@model IList<Question>
+﻿@model IEnumerable<SurveyInfo>
 
 @{
     ViewBag.Title = "Index";
@@ -7,15 +7,11 @@
 <h2>New Survey</h2>
 <br />
 
-@*@using (Html.BeginForm("Create", "Survey", FormMethod.Post))
-{*@
-    <table>
-        @foreach (var survey in Model)
-        {
-        <tr>
-            @{ Html.RenderPartial("Question", survey); }
-        </tr>
-        }
-    </table>
+<table>
+    @foreach (var survey in Model)
+    {
+        Html.RenderPartial("Question", survey);
+    }
+</table>
 
-    <input type="submit" id="save" value="Save" />
+<input type="submit" id="save" value="Save" />

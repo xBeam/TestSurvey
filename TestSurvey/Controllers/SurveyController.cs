@@ -96,11 +96,10 @@ namespace TestSurvey.Controllers
             //}
 
             //return View();
-
-            var listq = db.Questions;
-            var slist = db.SurveyInfos;
-
-            return View(db.Questions.ToList());
+            var listA = db.Answers.ToList().OrderBy(c => c.Id);
+            var listQ = db.Questions.ToList().OrderBy(c=>c.Id);
+            var listS = db.SurveyInfos.ToList().OrderBy(c => c.Id);
+            return View(listS);
         }
 
         public ActionResult SecondPage()
@@ -132,7 +131,15 @@ namespace TestSurvey.Controllers
         [HttpPost]
         public ActionResult Create(List<Question> questions)
         {
-            Console.WriteLine(questions);
+            foreach (var jsonObject in questions) 
+            {
+                var questionToChange = db.Questions.Find(jsonObject.Id); 
+                questionToChange.TypedAnswer = jsonObject.TypedAnswer;
+                db.Entry(questionToChange).State = EntityState.Modified;
+            }
+
+            db.SaveChanges();
+
             return View();
         }
 

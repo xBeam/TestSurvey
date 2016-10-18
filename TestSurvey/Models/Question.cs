@@ -15,5 +15,6 @@ namespace TestSurvey
         public ICollection<Answer> Answers { get; set; }
         public SurveyInfo SurveyId { get; set; }
         public QuestionTypes QuestionType { get; set; }
+        public string TypedAnswer { get; set; }
     }
 }
