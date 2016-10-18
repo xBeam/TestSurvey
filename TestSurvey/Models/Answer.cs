@@ -6,5 +6,6 @@
         public string Text { get; set; }
         public Question QuestionId { get; set; }
         public SurveyInfo SurveyId { get; set; }
+        public bool IsChecked { get; set; }
     }
 }

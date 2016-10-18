@@ -19,9 +19,19 @@
             <td>
                 @foreach (var answer in question.Answers)
                 {
-                    <div class="checkbox">
-                        <label><input type="checkbox" class="checkbox-answer" value=@question.Id>@answer.Text</label>
-                    </div>
+                    if (answer.IsChecked)
+                    {
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="checkbox-answer" value=@question.Id checked />@answer.Text</label>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="checkbox">
+                            <label><input type="checkbox" class="checkbox-answer" value=@question.Id />@answer.Text</label>
+                        </div>
+                    }
+
                 }
             </td>
         </tr>
@@ -34,9 +44,18 @@
             <td>
                 @foreach (var answer in question.Answers)
                 {
-                    <div class="radio">
-                        <label><input type="radio" class="radio-answer" name=@question.Id>@answer.Text</label>
-                    </div>
+                    if (answer.IsChecked)
+                    {
+                        <div class="radio">
+                            <label><input type="radio" class="radio-answer" checked name=@question.Id>@answer.Text</label>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="radio">
+                            <label><input type="radio" class="radio-answer" name=@question.Id>@answer.Text</label>
+                        </div>
+                    }
                 }
             </td>
         </tr>

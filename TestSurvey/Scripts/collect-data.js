@@ -1,32 +1,45 @@
 ﻿$(document).ready(function () {
     $("#save").bind("click", function () {
-        var answers = $(".text-answer"), jsonData = [];
+        var answers = $(".text-answer"), 
+            jsonData = [], 
+            radios = $(".radio-answer"), 
+            checkboxes = $(".checkbox-answer");
 
         for (var i = 0; i < answers.length; i++) {
             jsonData.push({
                 Id: answers[i].name,
-                TypedAnswer: answers[i].value
+                Text: answers[i].value
             });
         }
-
-        var radios = $(".radio-answer");
 
         for (var r = 0; r < radios.length; r++) {
             if (radios[r].checked) {
                 jsonData.push({
                     Id: radios[r].name,
-                    TypedAnswer: radios[r].closest('label').innerText
+                    Text: radios[r].closest('label').innerText,
+                    IsChecked: true
+                });
+            } else {
+                jsonData.push({
+                    Id: radios[r].name,
+                    Text: radios[r].closest('label').innerText,
+                    IsChecked: false
                 });
             }
         }
-
-        var checkboxes = $(".checkbox-answer");
 
         for (var c = 0; c < checkboxes.length; c++) {
             if (checkboxes[c].checked) {
                 jsonData.push({
                     Id: checkboxes[c].value,
-                    TypedAnswer: checkboxes[c].closest('label').innerText
+                    Text: checkboxes[c].closest('label').innerText,
+                    IsChecked: true
+                });
+            } else {
+                jsonData.push({
+                    Id: checkboxes[c].value,
+                    Text: checkboxes[c].closest('label').innerText,
+                    IsChecked: false
                 });
             }
         }

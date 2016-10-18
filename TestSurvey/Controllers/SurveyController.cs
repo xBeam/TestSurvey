@@ -112,24 +112,25 @@ namespace TestSurvey.Controllers
 
         // GET: Survey/Create
         [HttpPost]
-        public ActionResult Create(List<Question> questions)
+        public ActionResult Create(List<Answer> jsonObjects)
         {
-            foreach (var jsonObject in questions) 
+            foreach (var jsonObject in jsonObjects) 
             {
                 var questionToChange = db.Questions.Find(jsonObject.Id); 
-                questionToChange.TypedAnswer = jsonObject.TypedAnswer;
-                //if (questionToChange.Answers.Count() > 1 && questionToChange.Answers.Count() < 4)
-                //{
-                    //questionToChange.QuestionType = QuestionTypes.Radio;
-                //}
-                //else if (questionToChange.Answers.Count() > 1 && questionToChange.Answers.Count() >3)
-                //{
-                    //questionToChange.QuestionType = QuestionTypes.Checkbox;
-                //}
-                //else
-                //{
-                    //questionToChange.QuestionType = QuestionTypes.Text;
-                //}
+                questionToChange.TypedAnswer = jsonObject.Text;
+
+                if (questionToChange.QuestionType == QuestionTypes.Checkbox || questionToChange.QuestionType == QuestionTypes.Radio)
+                {
+                    var answer = db.Answers.Where(c => c.QuestionId.Id == questionToChange.Id && c.Text == jsonObject.Text).FirstOrDefault();
+                    answer.IsChecked = jsonObject.IsChecked;
+                                            
+                    db.Entry(answer).State = EntityState.Modified;
+                }
+
+                //questionToChange.QuestionType = QuestionTypes.Radio;
+                //questionToChange.QuestionType = QuestionTypes.Checkbox;
+                //questionToChange.QuestionType = QuestionTypes.Text;
+
                 db.Entry(questionToChange).State = EntityState.Modified;
             }
 
