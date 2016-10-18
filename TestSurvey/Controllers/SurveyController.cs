@@ -27,49 +27,34 @@ namespace TestSurvey.Controllers
                         {
                             new Question
                             {
-                                Text = "Question 1",
-                                QuestionType = QuestionTypes.Radio,
+                                Text = "Is it very Important Question?",
+                                QuestionType = QuestionTypes.Radio, 
                                 Answers = new List<Answer>()
                                 {
-                                    new Answer
-                                    {
-                                        Text = "Answer"
-                                    },
-                                    new Answer
-                                    {
-                                        Text = "Option"
-                                    },
-                                    new Answer
-                                    {
-                                        Text = "Response"
-                                    }
+                                    new Answer { Text = "Yes" },
+                                    new Answer { Text = "No" },
+                                    new Answer { Text = "In doubt" }
                                 }
                             },
 
                             new Question
                             {
-                                Text = "Question 2",
+                                Text = "Choose your favorite color(s)",
                                 QuestionType = QuestionTypes.Checkbox,
                                 Answers = new List<Answer>()
                                 {
-                                    new Answer { Text = "Answer" },
-                                    new Answer { Text = "Option" },
-                                    new Answer { Text = "Response" },
-                                    new Answer { Text = "Response 2" }
+                                    new Answer { Text = "Yellow" },
+                                    new Answer { Text = "Green" },
+                                    new Answer { Text = "Pink" },
+                                    new Answer { Text = "Black" }
                                 }
                             },
 
                             new Question
                             {
-                                Text = "Question 3",
+                                Text = "Write your biggest advantage:",
                                 QuestionType = QuestionTypes.Checkbox,
-                                Answers = new List<Answer>()
-                                {
-                                    new Answer
-                                    {
-                                        Text = "Answer"
-                                    }
-                                }
+                                Answers = new List<Answer>() { new Answer { Text = "Answer" } }
                             }
                         },
                         Respondents = new List<RespondentInfo>() { new RespondentInfo() { Name = "Admin" } }
@@ -79,9 +64,22 @@ namespace TestSurvey.Controllers
             }
 
             //return View();
-            var listA = db.Answers.ToList().OrderBy(c => c.Id);
-            var listQ = db.Questions.ToList().OrderBy(c=>c.Id);
+            var listA = db.Answers.ToList();
+            var listQ = db.Questions.ToList();
             var listS = db.SurveyInfos.ToList().OrderBy(c => c.Id);
+
+            //var firstS = db.SurveyInfos.FirstOrDefault(c => c.Id == 2);
+            //firstS.Name = "First Survey";
+            //db.Entry(firstS).State = EntityState.Modified;
+
+            //var thirdS = db.SurveyInfos.FirstOrDefault(c => c.Id == 3);
+            //thirdS.Name = "Second Survey";
+            //db.Entry(thirdS).State = EntityState.Modified;
+
+            //var secS = db.SurveyInfos.FirstOrDefault(c => c.Id == 4);
+            //secS.Name = "Third Survey";
+            //db.Entry(secS).State = EntityState.Modified;
+
             return View(listS);
         }
 

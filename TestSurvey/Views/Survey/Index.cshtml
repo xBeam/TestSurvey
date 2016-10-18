@@ -2,16 +2,33 @@
 
 @{
     ViewBag.Title = "Index";
+    <script type="text/javascript" src="~/Scripts/jquery.simplePagination.js"></script>
 }
 
-<h2>New Survey</h2>
+@foreach (var survey in Model)
+{
+    Html.RenderPartial("Question", survey);
+}
+
 <br />
 
-<table>
-    @foreach (var survey in Model)
-    {
-        Html.RenderPartial("Question", survey);
-    }
-</table>
-
 <input type="submit" id="save" value="Save" />
+
+<div id="pagination"></div>
+
+<script type="text/javascript">
+    $(function() {
+        $("#pagination").pagination({
+            itemsOnPage: 5,
+            pages: 3,
+            cssStyle: 'light-theme'
+        });
+    });
+
+    if (question.Id > 3) {
+        $(function() {
+            $(selector).pagination('nextPage');
+        });
+    }
+</script>
+

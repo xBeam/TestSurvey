@@ -1,6 +1,10 @@
 ﻿@model SurveyInfo
 
-@foreach (var question in Model.Questions)
+<h2>@Model.Name</h2>
+<br />
+
+<table>
+@foreach (var question in Model.Questions.OrderBy(c => c.Id))
 {
     if (question.QuestionType.ToString() == "Text")
     {
@@ -61,3 +65,4 @@
         </tr>
     }
 }
+</table>
