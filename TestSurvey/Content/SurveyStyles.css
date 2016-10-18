@@ -20,3 +20,7 @@ ul.pagination li a.active {
     background-color: rosybrown;
     color: white;
 }
+
+td label {
+   margin: 5px;
+}

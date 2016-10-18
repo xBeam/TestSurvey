@@ -91,12 +91,15 @@ namespace TestSurvey.Controllers
             //            },
             //            Respondents = new List<RespondentInfo>() { new RespondentInfo() { Name = "Admin" } }
             //        });
-            //    var list = db.SurveyInfos.ToList();
 
             //    db.SaveChanges();
             //}
 
             //return View();
+
+            var listq = db.Questions;
+            var slist = db.SurveyInfos;
+
             return View(db.Questions.ToList());
         }
 

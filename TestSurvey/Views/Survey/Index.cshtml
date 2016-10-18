@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TestSurvey.Question>
+﻿@model IList<Question>
 
 @{
     ViewBag.Title = "Index";
@@ -10,10 +10,10 @@
 @using (Html.BeginForm("Create", "Survey", FormMethod.Post))
 {
     <table>
-        @foreach (var question in Model)
+        @foreach (var survey in Model)
         {
         <tr>
-            @Html.Edi("Question")
+            @{ Html.RenderPartial("Question", survey); }
         </tr>
         }
     </table>
