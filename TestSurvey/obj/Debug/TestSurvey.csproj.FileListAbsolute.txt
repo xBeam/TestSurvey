@@ -1,0 +1,168 @@
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\ApplicationInsights.config
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\csc.exe
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\System.Collections.Immutable.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\vbc.exe
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\VBCSCompiler.exe
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\roslyn\VBCSCompiler.exe.config
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\TestSurvey.dll.config
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\TestSurvey.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\TestSurvey.pdb
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Antlr3.Runtime.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\EntityFramework.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\EntityFramework.SqlServer.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.Web.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.WindowsServer.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.ApplicationInsights.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Google.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Web.Infrastructure.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Newtonsoft.Json.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Owin.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Helpers.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Mvc.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Optimization.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Razor.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Deployment.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Razor.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\WebGrease.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.Web.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.WindowsServer.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.ApplicationInsights.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Helpers.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Mvc.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Optimization.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.Razor.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Deployment.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Razor.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Antlr3.Runtime.pdb
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Newtonsoft.Json.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\EntityFramework.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\EntityFramework.SqlServer.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Google.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.csprojResolveAssemblyReference.cache
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.dll
+c:\users\3days\documents\visual studio 2015\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.pdb
+c:\Users\3Days\Documents\Visual Studio 2015\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.Migrations.initiak.resources
+c:\Users\3Days\Documents\Visual Studio 2015\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.csproj.GenerateResource.Cache
+C:\Projects\TestSurvey\TestSurvey\bin\ApplicationInsights.config
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\csc.exe
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\System.Collections.Immutable.dll
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\vbc.exe
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\VBCSCompiler.exe
+C:\Projects\TestSurvey\TestSurvey\bin\roslyn\VBCSCompiler.exe.config
+C:\Projects\TestSurvey\TestSurvey\bin\TestSurvey.dll.config
+C:\Projects\TestSurvey\TestSurvey\bin\TestSurvey.dll
+C:\Projects\TestSurvey\TestSurvey\bin\TestSurvey.pdb
+C:\Projects\TestSurvey\TestSurvey\bin\Antlr3.Runtime.dll
+C:\Projects\TestSurvey\TestSurvey\bin\EntityFramework.dll
+C:\Projects\TestSurvey\TestSurvey\bin\EntityFramework.SqlServer.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.DependencyCollector.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.Web.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.WindowsServer.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.ApplicationInsights.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Google.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Newtonsoft.Json.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Owin.dll
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Helpers.dll
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Mvc.dll
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Optimization.dll
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Razor.dll
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.dll
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Razor.dll
+C:\Projects\TestSurvey\TestSurvey\bin\WebGrease.dll
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.DependencyCollector.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.Web.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AI.WindowsServer.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.ApplicationInsights.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Helpers.xml
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Mvc.xml
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Optimization.xml
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.Razor.xml
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.xml
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\TestSurvey\TestSurvey\bin\System.Web.WebPages.Razor.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Antlr3.Runtime.pdb
+C:\Projects\TestSurvey\TestSurvey\bin\Newtonsoft.Json.xml
+C:\Projects\TestSurvey\TestSurvey\bin\EntityFramework.xml
+C:\Projects\TestSurvey\TestSurvey\bin\EntityFramework.SqlServer.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Google.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Projects\TestSurvey\TestSurvey\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.csprojResolveAssemblyReference.cache
+C:\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.Migrations.initiak.resources
+C:\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.csproj.GenerateResource.Cache
+C:\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.dll
+C:\Projects\TestSurvey\TestSurvey\obj\Debug\TestSurvey.pdb
