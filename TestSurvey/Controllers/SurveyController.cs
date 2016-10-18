@@ -17,83 +17,66 @@ namespace TestSurvey.Controllers
         // GET: Survey
         public ActionResult Index()
         {
-            //if (!db.SurveyInfos.Any())
-            //{
-            //    db.SurveyInfos.Add(
-            //        new SurveyInfo
-            //        {
-            //            Name = "First Survey",
-            //            Questions = new List<Question>()
-            //            {
-            //                new Question
-            //                {
-            //                    Text = "Question 1",
-            //                    Answers = new List<Answer>()
-            //                    {
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Radio,
-            //                            Text = "Answer"
-            //                        },
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Radio,
-            //                            Text = "Option"
-            //                        },
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Radio,
-            //                            Text = "Response"
-            //                        }
-            //                    }
-            //                },
+            if (!db.SurveyInfos.Any())
+            {
+                db.SurveyInfos.Add(
+                    new SurveyInfo
+                    {
+                        Name = "First Survey",
+                        Questions = new List<Question>()
+                        {
+                            new Question
+                            {
+                                Text = "Question 1",
+                                QuestionType = QuestionTypes.Radio,
+                                Answers = new List<Answer>()
+                                {
+                                    new Answer
+                                    {
+                                        Text = "Answer"
+                                    },
+                                    new Answer
+                                    {
+                                        Text = "Option"
+                                    },
+                                    new Answer
+                                    {
+                                        Text = "Response"
+                                    }
+                                }
+                            },
 
-            //                new Question
-            //                {
-            //                    Text = "Question 2",
-            //                    Answers = new List<Answer>()
-            //                    {
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Checkbox,
-            //                            Text = "Answer"
-            //                        },
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Checkbox,
-            //                            Text = "Option"
-            //                        },
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Checkbox,
-            //                            Text = "Response"
-            //                        },
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Checkbox,
-            //                            Text = "Response 2"
-            //                        }
-            //                    }
-            //                },
+                            new Question
+                            {
+                                Text = "Question 2",
+                                QuestionType = QuestionTypes.Checkbox,
+                                Answers = new List<Answer>()
+                                {
+                                    new Answer { Text = "Answer" },
+                                    new Answer { Text = "Option" },
+                                    new Answer { Text = "Response" },
+                                    new Answer { Text = "Response 2" }
+                                }
+                            },
 
-            //                new Question
-            //                {
-            //                    Text = "Question 3",
-            //                    Answers = new List<Answer>()
-            //                    {
-            //                        new Answer
-            //                        {
-            //                            AnswerType = AnswerTypes.Text,
-            //                            Text = "Answer"
-            //                        }
-            //                    }
-            //                }
-            //            },
-            //            Respondents = new List<RespondentInfo>() { new RespondentInfo() { Name = "Admin" } }
-            //        });
+                            new Question
+                            {
+                                Text = "Question 3",
+                                QuestionType = QuestionTypes.Checkbox,
+                                Answers = new List<Answer>()
+                                {
+                                    new Answer
+                                    {
+                                        Text = "Answer"
+                                    }
+                                }
+                            }
+                        },
+                        Respondents = new List<RespondentInfo>() { new RespondentInfo() { Name = "Admin" } }
+                    });
 
-            //    db.SaveChanges();
-            //}
+                db.SaveChanges();
+            }
 
             //return View();
             var listA = db.Answers.ToList().OrderBy(c => c.Id);
@@ -135,6 +118,18 @@ namespace TestSurvey.Controllers
             {
                 var questionToChange = db.Questions.Find(jsonObject.Id); 
                 questionToChange.TypedAnswer = jsonObject.TypedAnswer;
+                //if (questionToChange.Answers.Count() > 1 && questionToChange.Answers.Count() < 4)
+                //{
+                    //questionToChange.QuestionType = QuestionTypes.Radio;
+                //}
+                //else if (questionToChange.Answers.Count() > 1 && questionToChange.Answers.Count() >3)
+                //{
+                    //questionToChange.QuestionType = QuestionTypes.Checkbox;
+                //}
+                //else
+                //{
+                    //questionToChange.QuestionType = QuestionTypes.Text;
+                //}
                 db.Entry(questionToChange).State = EntityState.Modified;
             }
 

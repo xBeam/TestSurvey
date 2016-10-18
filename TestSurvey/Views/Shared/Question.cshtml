@@ -1,5 +1,44 @@
-﻿@model Question
+﻿@model SurveyInfo
 
-<td>@Html.Label(Model.Id.ToString())</td>
-<td>@Html.Label(Model.Text)</td>
-<td>@Html.TextBox(Model.Id.ToString(), null, new { @class = "textanswer" })</td>
+@foreach (var question in Model.Questions)
+{
+    if (question.QuestionType.ToString() == "Text")
+    {
+        <tr>
+            <td>@Html.Label(question.Id.ToString())</td>
+            <td>@Html.Label(question.Text)</td>
+
+            <td>@Html.TextBox(question.Id.ToString(), question.TypedAnswer ?? null, new { @class = "text-answer" })</td>
+        </tr>
+    }
+    else if (question.QuestionType.ToString() == "Checkbox")
+    {
+        <tr>
+            <td>@Html.Label(question.Id.ToString())</td>
+            <td>@Html.Label(question.Text)</td>
+            <td>
+                @foreach (var answer in question.Answers)
+                {
+                    <div class="checkbox">
+                        <label><input type="checkbox" class="checkbox-answer" value=@question.Id>@answer.Text</label>
+                    </div>
+                }
+            </td>
+        </tr>
+    }
+    else if (question.QuestionType.ToString() == "Radio")
+    {
+        <tr>
+            <td>@Html.Label(question.Id.ToString())</td>
+            <td>@Html.Label(question.Text)</td>
+            <td>
+                @foreach (var answer in question.Answers)
+                {
+                    <div class="radio">
+                        <label><input type="radio" class="radio-answer" name=@question.Id>@answer.Text</label>
+                    </div>
+                }
+            </td>
+        </tr>
+    }
+}
