@@ -1,4 +1,5 @@
 ﻿@model Question
 
-<td>@Html.TextBoxFor(m => m.Id)</td>
-<td>@Html.TextBoxFor(m => m.Text)</td>
+<td>@Html.Label(Model.Id.ToString())</td>
+<td>@Html.Label(Model.Text)</td>
+<td>@Html.TextBox(Model.Id.ToString(), null, new { @class = "textanswer" })</td>
