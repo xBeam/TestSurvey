@@ -1,34 +1,100 @@
-﻿@model IEnumerable<SurveyInfo>
-
+﻿@model List<Question>
 @{
     ViewBag.Title = "Index";
     <script type="text/javascript" src="~/Scripts/jquery.simplePagination.js"></script>
 }
 
-@foreach (var survey in Model)
-{
-    Html.RenderPartial("Question", survey);
-}
+
+<table>
+    @foreach (var question in Model.ToList())
+    {
+        if (question.QuestionType.ToString() == "Text")
+        {
+            <tr>
+                <td>@Html.Label(question.Id.ToString())</td>
+                <td>@Html.Label(question.Text)</td>
+
+                <td>@Html.TextBox(question.Id.ToString(), question.TypedAnswer ?? null, new { @class = "text-answer", questionId = question.Id.ToString() })</td>
+            </tr>
+        }
+        else if (question.QuestionType.ToString() == "Checkbox")
+        {
+            <tr>
+                <td>@Html.Label(question.Id.ToString())</td>
+                <td>@Html.Label(question.Text)</td>
+                <td>
+                    @foreach (var answer in question.Answers)
+                    {
+                        if (answer.IsChecked)
+                        {
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="checkbox-answer" value=@question.Id checked/>@answer.Text</label>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="checkbox-answer" value=@question.Id/>@answer.Text</label>
+                            </div>
+                        }
+
+                    }
+                </td>
+            </tr>
+        }
+        else if (question.QuestionType.ToString() == "Radio")
+        {
+            <tr>
+                <td>@Html.Label(question.Id.ToString())</td>
+                <td>@Html.Label(question.Text)</td>
+                <td>
+                    @foreach (var answer in question.Answers)
+                    {
+                        if (answer.IsChecked)
+                        {
+                            <div class="radio">
+                                <label><input type="radio" class="radio-answer" checked name=@question.Id>@answer.Text</label>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="radio">
+                                <label><input type="radio" class="radio-answer" name=@question.Id>@answer.Text</label>
+                            </div>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    }
+</table>
+
 
 <br />
 
 <input type="submit" id="save" value="Save" />
 
-<div id="pagination"></div>
+<div id="pagination">
+    <div>text</div>
+    <div>cool</div>
+    <div>cool</div>
+    <div>cool</div>
+    <div>cool</div>
+    <div>cool</div>
+    <div>cool</div>
+</div>
+
+
 
 <script type="text/javascript">
     $(function() {
         $("#pagination").pagination({
             itemsOnPage: 5,
             pages: 3,
-            cssStyle: 'light-theme'
+            currentPage: @ViewBag.pageNumber,
+            cssStyle: 'light-theme',
+            hrefTextPrefix: '/Survey/Index/',
         });
     });
-
-    if (question.Id > 3) {
-        $(function() {
-            $(selector).pagination('nextPage');
-        });
-    }
 </script>
 

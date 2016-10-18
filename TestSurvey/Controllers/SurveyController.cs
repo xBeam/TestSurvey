@@ -14,8 +14,29 @@ namespace TestSurvey.Controllers
     {
         private SurveyModel db = new SurveyModel();
 
+        public const int PageSize = 3;
+
         // GET: Survey
-        public ActionResult Index()
+        [Route("Survey/{pageNumber:int}")]
+        public ActionResult Index(int pageNumber = 1)
+        {
+            InitializeDb();
+            db.Answers.ToList();
+
+            var offset = (pageNumber - 1) * PageSize;
+
+            var questionList = db.Questions
+                            .OrderBy(c => c.Id)
+                            .Skip(offset)
+                            .Take(PageSize)
+                            .ToList();
+
+            ViewBag.pageNumber = pageNumber;
+
+            return View(questionList);
+        }
+
+        public void InitializeDb()
         {
             if (!db.SurveyInfos.Any())
             {
@@ -28,7 +49,7 @@ namespace TestSurvey.Controllers
                             new Question
                             {
                                 Text = "Is it very Important Question?",
-                                QuestionType = QuestionTypes.Radio, 
+                                QuestionType = QuestionTypes.Radio,
                                 Answers = new List<Answer>()
                                 {
                                     new Answer { Text = "Yes" },
@@ -62,35 +83,6 @@ namespace TestSurvey.Controllers
 
                 db.SaveChanges();
             }
-
-            //return View();
-            var listA = db.Answers.ToList();
-            var listQ = db.Questions.ToList();
-            var listS = db.SurveyInfos.ToList().OrderBy(c => c.Id);
-
-            //var firstS = db.SurveyInfos.FirstOrDefault(c => c.Id == 2);
-            //firstS.Name = "First Survey";
-            //db.Entry(firstS).State = EntityState.Modified;
-
-            //var thirdS = db.SurveyInfos.FirstOrDefault(c => c.Id == 3);
-            //thirdS.Name = "Second Survey";
-            //db.Entry(thirdS).State = EntityState.Modified;
-
-            //var secS = db.SurveyInfos.FirstOrDefault(c => c.Id == 4);
-            //secS.Name = "Third Survey";
-            //db.Entry(secS).State = EntityState.Modified;
-
-            return View(listS);
-        }
-
-        public ActionResult SecondPage()
-        {
-           return View();
-        }
-
-        public ActionResult ThirdPage()
-        {
-            return View();
         }
 
         // GET: Survey/Details/5
