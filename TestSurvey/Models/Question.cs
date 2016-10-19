@@ -13,7 +13,7 @@ namespace TestSurvey
         public int Id { get; set; }
         public string Text { get; set; }
         public ICollection<Answer> Answers { get; set; }
-        public SurveyInfo SurveyId { get; set; }
+        public SurveyInfo Survey { get; set; }
         public QuestionTypes QuestionType { get; set; }
         public string TypedAnswer { get; set; }
     }

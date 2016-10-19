@@ -1,9 +1,10 @@
 ﻿@model List<Question>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Survey";
     <script type="text/javascript" src="~/Scripts/jquery.simplePagination.js"></script>
 }
 
+<h2>@ViewBag.SurveyName</h2>
 
 <table>
     @foreach (var question in Model.ToList())
@@ -37,7 +38,6 @@
                                 <label><input type="checkbox" class="checkbox-answer" questionId=@question.Id />@answer.Text</label>
                             </div>
                         }
-
                     }
                 </td>
             </tr>
@@ -53,13 +53,13 @@
                         if (answer.IsChecked)
                         {
                             <div class="radio">
-                                <label><input type="radio" class="radio-answer" checked questionId=@question.Id>@answer.Text</label>
+                                <label><input type="radio" class="radio-answer" name=@question.Id questionId=@question.Id checked />@answer.Text</label>
                             </div>
                         }
                         else
                         {
                             <div class="radio">
-                                <label><input type="radio" class="radio-answer" questionId=@question.Id>@answer.Text</label>
+                                <label><input type="radio" class="radio-answer" name=@question.Id questionId=@question.Id />@answer.Text</label>
                             </div>
                         }
                     }
@@ -69,21 +69,22 @@
     }
 </table>
 
-
 <br />
 
-<input type="submit" id="save" value="Save" />
+@*<input type="submit" id="save" value="Save" />*@
 
 <div id="pagination"></div>
 
 <script type="text/javascript">
     $(function() {
         $("#pagination").pagination({
-            itemsOnPage: 5,
             pages: 3,
             currentPage: @ViewBag.pageNumber,
             cssStyle: 'light-theme',
-            hrefTextPrefix: '/Survey/Index/'
+            hrefTextPrefix: '/Survey/Index/',
+            onPageClick: function() {
+                collectData();
+            }
         });
     });
 </script>

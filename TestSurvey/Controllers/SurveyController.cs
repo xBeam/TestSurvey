@@ -14,7 +14,7 @@ namespace TestSurvey.Controllers
     {
         private SurveyModel db = new SurveyModel();
 
-        public const int PageSize = 3;
+        public const int PageSize = 8;
 
         // GET: Survey
         [Route("Survey/{pageNumber:int}")]
@@ -32,6 +32,7 @@ namespace TestSurvey.Controllers
                             .ToList();
 
             ViewBag.pageNumber = pageNumber;
+            ViewBag.SurveyName = "Survey";
 
             return View(questionList);
         }
@@ -112,7 +113,7 @@ namespace TestSurvey.Controllers
 
                 if (questionToChange.QuestionType == QuestionTypes.Checkbox || questionToChange.QuestionType == QuestionTypes.Radio)
                 {
-                    var answer = db.Answers.FirstOrDefault(c => c.QuestionId.Id == questionToChange.Id && c.Text == jsonObject.Text);
+                    var answer = db.Answers.FirstOrDefault(c => c.Question.Id == questionToChange.Id && c.Text == jsonObject.Text);
 
                     if (answer == null) continue;
 

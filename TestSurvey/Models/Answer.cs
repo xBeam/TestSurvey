@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        public Question QuestionId { get; set; }
-        public SurveyInfo SurveyId { get; set; }
+        public Question Question { get; set; }
+        public SurveyInfo Survey { get; set; }
         public bool IsChecked { get; set; }
     }
 }
