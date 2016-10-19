@@ -46,7 +46,7 @@
     if (jsonData.length > 0) {
         $.ajax({
             type: "POST",
-            url: "/survey/create",
+            url: "/Survey/SaveData",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(jsonData),

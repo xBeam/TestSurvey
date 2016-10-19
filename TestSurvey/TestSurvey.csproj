@@ -337,8 +337,6 @@
     <Content Include="Views\Survey\Details.cshtml" />
     <Content Include="Views\Survey\Edit.cshtml" />
     <Content Include="Views\Survey\Index.cshtml" />
-    <Content Include="Views\Survey\SecondPage.cshtml" />
-    <Content Include="Views\Survey\ThirdPage.cshtml" />
     <Content Include="Views\Shared\Question.cshtml" />
   </ItemGroup>
   <ItemGroup>

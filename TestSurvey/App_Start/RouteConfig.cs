@@ -15,8 +15,8 @@ namespace TestSurvey
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{pageNumber}",
-                defaults: new { controller = "Home", action = "Index", pageNumber = UrlParameter.Optional }
+                url: "{controller}/{action}/{surveyId}/{pageNumber}",
+                defaults: new { controller = "Home", action = "Index", surveyId = UrlParameter.Optional, pageNumber = UrlParameter.Optional }
             );
         }
     }

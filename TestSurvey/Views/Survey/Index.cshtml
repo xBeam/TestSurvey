@@ -71,8 +71,6 @@
 
 <br />
 
-@*<input type="submit" id="save" value="Save" />*@
-
 <div id="pagination"></div>
 
 <script type="text/javascript">
@@ -81,7 +79,7 @@
             pages: 3,
             currentPage: @ViewBag.pageNumber,
             cssStyle: 'light-theme',
-            hrefTextPrefix: '/Survey/Index/',
+            hrefTextPrefix: '/Survey/Index/@ViewBag.surveyId/',
             onPageClick: function() {
                 collectData();
             }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using TestSurvey;
 
 namespace TestSurvey.Controllers
 {
@@ -16,23 +13,26 @@ namespace TestSurvey.Controllers
 
         public const int PageSize = 8;
 
-        // GET: Survey
-        [Route("Survey/{pageNumber:int}")]
-        public ActionResult Index(int pageNumber = 1)
+        [Route("Survey/{surveyId:int}/{pageNumber:int}/")]
+        public ActionResult Index(int pageNumber = 1, int surveyId = 2)
         {
             InitializeDb();
             db.Answers.ToList();
 
             var offset = (pageNumber - 1) * PageSize;
 
+            var survey = db.SurveyInfos.FirstOrDefault(c => c.Id == surveyId);
+
             var questionList = db.Questions
+                            .Where(c => c.Survey.Id == surveyId)
                             .OrderBy(c => c.Id)
                             .Skip(offset)
                             .Take(PageSize)
                             .ToList();
 
+            ViewBag.surveyId = surveyId;
             ViewBag.pageNumber = pageNumber;
-            ViewBag.SurveyName = "Survey";
+            ViewBag.SurveyName = survey.Name;
 
             return View(questionList);
         }
@@ -86,24 +86,8 @@ namespace TestSurvey.Controllers
             }
         }
 
-        // GET: Survey/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SurveyInfo surveyInfo = db.SurveyInfos.Find(id);
-            if (surveyInfo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(surveyInfo);
-        }
-
-        // GET: Survey/Create
         [HttpPost]
-        public ActionResult Create(List<Answer> jsonObjects)
+        public ActionResult SaveData(List<Answer> jsonObjects)
         {
             foreach (var jsonObject in jsonObjects)
             {
@@ -132,37 +116,6 @@ namespace TestSurvey.Controllers
             db.SaveChanges();
 
             return View();
-        }
-
-        // GET: Survey/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            SurveyInfo surveyInfo = db.SurveyInfos.Find(id);
-            if (surveyInfo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(surveyInfo);
-        }
-
-        // POST: Survey/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] SurveyInfo surveyInfo)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(surveyInfo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(surveyInfo);
         }
 
         // GET: Survey/Delete/5
