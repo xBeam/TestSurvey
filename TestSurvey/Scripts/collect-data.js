@@ -7,7 +7,7 @@
 
         for (var i = 0; i < answers.length; i++) {
             jsonData.push({
-                Id: answers[i].name,
+                Id: answers[i].attributes.questionid.value,
                 Text: answers[i].value
             });
         }
@@ -15,13 +15,13 @@
         for (var r = 0; r < radios.length; r++) {
             if (radios[r].checked) {
                 jsonData.push({
-                    Id: radios[r].name,
+                    Id: radios[r].attributes.questionId.value,
                     Text: radios[r].closest('label').innerText,
                     IsChecked: true
                 });
             } else {
                 jsonData.push({
-                    Id: radios[r].name,
+                    Id: radios[r].attributes.questionId.value,
                     Text: radios[r].closest('label').innerText,
                     IsChecked: false
                 });
@@ -31,13 +31,13 @@
         for (var c = 0; c < checkboxes.length; c++) {
             if (checkboxes[c].checked) {
                 jsonData.push({
-                    Id: checkboxes[c].value,
+                    Id: checkboxes[c].attributes.questionId.value,
                     Text: checkboxes[c].closest('label').innerText,
                     IsChecked: true
                 });
             } else {
                 jsonData.push({
-                    Id: checkboxes[c].value,
+                    Id: checkboxes[c].attributes.questionId.value,
                     Text: checkboxes[c].closest('label').innerText,
                     IsChecked: false
                 });
@@ -52,7 +52,7 @@
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(jsonData),
                 success: function (result) {
-                    console.log(result); //log to the console to see whether it worked
+                    console.log(result); 
                 },
                 error: function (error) {
                     console.log("There was an error posting the data to the server: " + error.responseText);

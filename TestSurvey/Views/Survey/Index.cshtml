@@ -14,7 +14,7 @@
                 <td>@Html.Label(question.Id.ToString())</td>
                 <td>@Html.Label(question.Text)</td>
 
-                <td>@Html.TextBox(question.Id.ToString(), question.TypedAnswer ?? null, new { @class = "text-answer", questionId = question.Id.ToString() })</td>
+                <td>@Html.TextBox("textbox", question.TypedAnswer ?? null, new { @class = "text-answer", questionId = question.Id.ToString() })</td>
             </tr>
         }
         else if (question.QuestionType.ToString() == "Checkbox")
@@ -28,13 +28,13 @@
                         if (answer.IsChecked)
                         {
                             <div class="checkbox">
-                                <label><input type="checkbox" class="checkbox-answer" value=@question.Id checked/>@answer.Text</label>
+                                <label><input type="checkbox" class="checkbox-answer" questionId=@question.Id checked />@answer.Text</label>
                             </div>
                         }
                         else
                         {
                             <div class="checkbox">
-                                <label><input type="checkbox" class="checkbox-answer" value=@question.Id/>@answer.Text</label>
+                                <label><input type="checkbox" class="checkbox-answer" questionId=@question.Id />@answer.Text</label>
                             </div>
                         }
 
@@ -53,13 +53,13 @@
                         if (answer.IsChecked)
                         {
                             <div class="radio">
-                                <label><input type="radio" class="radio-answer" checked name=@question.Id>@answer.Text</label>
+                                <label><input type="radio" class="radio-answer" checked questionId=@question.Id>@answer.Text</label>
                             </div>
                         }
                         else
                         {
                             <div class="radio">
-                                <label><input type="radio" class="radio-answer" name=@question.Id>@answer.Text</label>
+                                <label><input type="radio" class="radio-answer" questionId=@question.Id>@answer.Text</label>
                             </div>
                         }
                     }
@@ -74,17 +74,7 @@
 
 <input type="submit" id="save" value="Save" />
 
-<div id="pagination">
-    <div>text</div>
-    <div>cool</div>
-    <div>cool</div>
-    <div>cool</div>
-    <div>cool</div>
-    <div>cool</div>
-    <div>cool</div>
-</div>
-
-
+<div id="pagination"></div>
 
 <script type="text/javascript">
     $(function() {
@@ -93,7 +83,7 @@
             pages: 3,
             currentPage: @ViewBag.pageNumber,
             cssStyle: 'light-theme',
-            hrefTextPrefix: '/Survey/Index/',
+            hrefTextPrefix: '/Survey/Index/'
         });
     });
 </script>

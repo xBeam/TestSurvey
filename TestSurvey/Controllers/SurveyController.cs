@@ -104,22 +104,26 @@ namespace TestSurvey.Controllers
         [HttpPost]
         public ActionResult Create(List<Answer> jsonObjects)
         {
-            foreach (var jsonObject in jsonObjects) 
+            foreach (var jsonObject in jsonObjects)
             {
-                var questionToChange = db.Questions.Find(jsonObject.Id); 
-                questionToChange.TypedAnswer = jsonObject.Text;
+                if (jsonObject.Id == 0) continue;
+
+                var questionToChange = db.Questions.Find(jsonObject.Id);
 
                 if (questionToChange.QuestionType == QuestionTypes.Checkbox || questionToChange.QuestionType == QuestionTypes.Radio)
                 {
-                    var answer = db.Answers.Where(c => c.QuestionId.Id == questionToChange.Id && c.Text == jsonObject.Text).FirstOrDefault();
+                    var answer = db.Answers.FirstOrDefault(c => c.QuestionId.Id == questionToChange.Id && c.Text == jsonObject.Text);
+
+                    if (answer == null) continue;
+
                     answer.IsChecked = jsonObject.IsChecked;
                                             
                     db.Entry(answer).State = EntityState.Modified;
                 }
-
-                //questionToChange.QuestionType = QuestionTypes.Radio;
-                //questionToChange.QuestionType = QuestionTypes.Checkbox;
-                //questionToChange.QuestionType = QuestionTypes.Text;
+                else
+                {
+                    questionToChange.TypedAnswer = jsonObject.Text;
+                }
 
                 db.Entry(questionToChange).State = EntityState.Modified;
             }
@@ -128,23 +132,6 @@ namespace TestSurvey.Controllers
 
             return View();
         }
-
-        // POST: Survey/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "Id,Name")] SurveyInfo surveyInfo)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.SurveyInfos.Add(surveyInfo);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(surveyInfo);
-        //}
 
         // GET: Survey/Edit/5
         public ActionResult Edit(int? id)
