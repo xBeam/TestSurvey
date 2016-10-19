@@ -12,16 +12,13 @@
         if (question.QuestionType.ToString() == "Text")
         {
             <tr>
-                <td>@Html.Label(question.Id.ToString())</td>
                 <td>@Html.Label(question.Text)</td>
-
                 <td>@Html.TextBox("textbox", question.TypedAnswer ?? null, new { @class = "text-answer", questionId = question.Id.ToString() })</td>
             </tr>
         }
         else if (question.QuestionType.ToString() == "Checkbox")
         {
             <tr>
-                <td>@Html.Label(question.Id.ToString())</td>
                 <td>@Html.Label(question.Text)</td>
                 <td>
                     @foreach (var answer in question.Answers)
@@ -45,7 +42,6 @@
         else if (question.QuestionType.ToString() == "Radio")
         {
             <tr>
-                <td>@Html.Label(question.Id.ToString())</td>
                 <td>@Html.Label(question.Text)</td>
                 <td>
                     @foreach (var answer in question.Answers)

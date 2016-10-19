@@ -148,7 +148,7 @@ namespace TestSurvey.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RespondentInfo model)
+        public ActionResult Register(RespondentInfo model)
         {
             if (ModelState.IsValid)
             {

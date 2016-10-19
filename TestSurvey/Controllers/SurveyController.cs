@@ -20,6 +20,7 @@ namespace TestSurvey.Controllers
             db.Answers.ToList();
 
             var offset = (pageNumber - 1) * PageSize;
+            var survey = db.SurveyInfos.FirstOrDefault(c => c.Id == surveyId);
 
             var questionList = db.Questions
                             .Where(c => c.Survey.Id == surveyId && c.Respondent.Id == userId)
@@ -31,7 +32,7 @@ namespace TestSurvey.Controllers
             ViewBag.userId = userId;
             ViewBag.surveyId = surveyId;
             ViewBag.pageNumber = pageNumber;
-            ViewBag.SurveyName = "Test Survey";
+            ViewBag.SurveyName = survey.Name;
 
             return View(questionList);
         }
@@ -78,7 +79,6 @@ namespace TestSurvey.Controllers
                                 Answers = new List<Answer>() { new Answer { Text = "Answer" } }
                             }
                         },
-                        //Respondents = new List<RespondentInfo>() { new RespondentInfo() { Name = "Admin" } }
                     });
 
                 db.SaveChanges();
