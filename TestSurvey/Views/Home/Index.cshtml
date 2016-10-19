@@ -9,8 +9,8 @@
     <br />
     <h2>Pick one of surveys:</h2>
     <ul>
-        <li>@Html.ActionLink("First Survey", "Index", "Survey", routeValues: new { SurveyId = 2 }, htmlAttributes: null)</li>
-        <li>@Html.ActionLink("Second Survey", "Index", "Survey", routeValues: new { SurveyId = 3 }, htmlAttributes: null)</li>
-        <li>@Html.ActionLink("Third Survey", "Index", "Survey", routeValues: new { SurveyId = 4 }, htmlAttributes: null)</li>
+        <li>@Html.ActionLink("First Survey", "Index", "Survey", routeValues: new { SurveyId = 2, userId = 1 }, htmlAttributes: null)</li>
+        <li>@Html.ActionLink("Second Survey", "Index", "Survey", routeValues: new { SurveyId = 3, userId = 2 }, htmlAttributes: null)</li>
+        <li>@Html.ActionLink("Third Survey", "Index", "Survey", routeValues: new { SurveyId = 4, userId = 3 }, htmlAttributes: null)</li>
     </ul>
 </div>

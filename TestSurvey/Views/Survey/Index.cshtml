@@ -79,7 +79,7 @@
             pages: 3,
             currentPage: @ViewBag.pageNumber,
             cssStyle: 'light-theme',
-            hrefTextPrefix: '/Survey/Index/@ViewBag.surveyId/',
+            hrefTextPrefix: '/Survey/Index/@ViewBag.userId/@ViewBag.surveyId/',
             onPageClick: function() {
                 collectData();
             }

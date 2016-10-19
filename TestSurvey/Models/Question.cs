@@ -16,5 +16,6 @@ namespace TestSurvey
         public SurveyInfo Survey { get; set; }
         public QuestionTypes QuestionType { get; set; }
         public string TypedAnswer { get; set; }
+        public RespondentInfo Respondent { get; set; }
     }
 }

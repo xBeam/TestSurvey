@@ -13,26 +13,25 @@ namespace TestSurvey.Controllers
 
         public const int PageSize = 8;
 
-        [Route("Survey/{surveyId:int}/{pageNumber:int}/")]
-        public ActionResult Index(int pageNumber = 1, int surveyId = 2)
+        [Route("Survey/{userId:int}/{surveyId:int}/{pageNumber:int}/")]
+        public ActionResult Index(int pageNumber = 1, int surveyId = 2, int userId = 1)
         {
             InitializeDb();
             db.Answers.ToList();
 
             var offset = (pageNumber - 1) * PageSize;
 
-            var survey = db.SurveyInfos.FirstOrDefault(c => c.Id == surveyId);
-
             var questionList = db.Questions
-                            .Where(c => c.Survey.Id == surveyId)
+                            .Where(c => c.Survey.Id == surveyId && c.Respondent.Id == userId)
                             .OrderBy(c => c.Id)
                             .Skip(offset)
                             .Take(PageSize)
                             .ToList();
 
+            ViewBag.userId = userId;
             ViewBag.surveyId = surveyId;
             ViewBag.pageNumber = pageNumber;
-            ViewBag.SurveyName = survey.Name;
+            ViewBag.SurveyName = "Test Survey";
 
             return View(questionList);
         }
@@ -79,7 +78,7 @@ namespace TestSurvey.Controllers
                                 Answers = new List<Answer>() { new Answer { Text = "Answer" } }
                             }
                         },
-                        Respondents = new List<RespondentInfo>() { new RespondentInfo() { Name = "Admin" } }
+                        //Respondents = new List<RespondentInfo>() { new RespondentInfo() { Name = "Admin" } }
                     });
 
                 db.SaveChanges();

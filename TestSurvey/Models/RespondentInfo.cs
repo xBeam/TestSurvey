@@ -1,4 +1,5 @@
-﻿namespace TestSurvey
+﻿using System.Collections.Generic;
+namespace TestSurvey
 {
     public class RespondentInfo
     {
@@ -7,5 +8,6 @@
         public string Password { get; set; }
         public string Email { get; set; }
         public SurveyInfo Survey { get; set; }
+        public ICollection<Question> Questions { get; set; }
     }
 }
