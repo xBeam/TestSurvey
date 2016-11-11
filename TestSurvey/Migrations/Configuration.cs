@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
+using TestSurvey.Context;
 using TestSurvey.Models;
 
 namespace TestSurvey.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<TestSurvey.Models.SurveyModel>
+    internal sealed class Configuration : DbMigrationsConfiguration<TestSurvey.Context.SurveyDbContext>
     {
-        private SurveyModel db = new SurveyModel();
+        private SurveyDbContext db = new SurveyDbContext();
 
         public Configuration()
         {
@@ -16,7 +17,7 @@ namespace TestSurvey.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(TestSurvey.Models.SurveyModel context)
+        protected override void Seed(TestSurvey.Context.SurveyDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

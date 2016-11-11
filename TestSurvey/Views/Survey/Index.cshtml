@@ -9,7 +9,7 @@
 <table>
     @foreach (var question in Model.ToList())
     {
-        var response = question.Responses.First(c => c.Respondent.Id == ViewBag.RespondentId);
+        var response = question.Responses.FirstOrDefault(c => c.Respondent.Id == ViewBag.RespondentId);
 
         if (question.QuestionType.ToString() == "Text")
         {

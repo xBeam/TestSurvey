@@ -1,4 +1,4 @@
-USE SurveyModel
+USE SurveyDb
 GO
 
 INSERT 

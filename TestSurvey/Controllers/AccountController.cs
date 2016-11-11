@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using TestSurvey.Context;
 using TestSurvey.Models;
 
 namespace TestSurvey.Controllers
@@ -17,7 +18,7 @@ namespace TestSurvey.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private SurveyModel db = new SurveyModel();
+        private SurveyDbContext db = new SurveyDbContext();
 
         public AccountController()
         {

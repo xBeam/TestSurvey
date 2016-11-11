@@ -1,11 +1,12 @@
-namespace TestSurvey.Models
+using TestSurvey.Models;
+
+namespace TestSurvey.Context
 {
     using System.Data.Entity;
 
-    public class SurveyModel : DbContext
+    public class SurveyDbContext : DbContext
     {
-        public SurveyModel()
-            : base("name=SurveyModel")
+        public SurveyDbContext() : base("name=SurveyDb")
         {
         }
 

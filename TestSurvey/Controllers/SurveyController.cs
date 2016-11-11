@@ -4,13 +4,14 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using TestSurvey.Context;
 using TestSurvey.Models;
 
 namespace TestSurvey.Controllers
 {
     public class SurveyController : Controller
     {
-        private SurveyModel db = new SurveyModel();
+        private SurveyDbContext db = new SurveyDbContext();
 
         public const int PageSize = 8;
 
@@ -165,7 +166,7 @@ namespace TestSurvey.Controllers
                 db.SaveChanges();
 
                 var respondent = db.RespondentInfos.First(c => c.Id == 1);
-
+                db.Questions.ToList();
                 foreach (var question in survey.Questions)
                 {
                     db.Responses.Add(
