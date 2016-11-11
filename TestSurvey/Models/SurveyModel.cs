@@ -1,8 +1,6 @@
-namespace TestSurvey
+namespace TestSurvey.Models
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class SurveyModel : DbContext
     {
@@ -15,5 +13,6 @@ namespace TestSurvey
         public virtual DbSet<Question> Questions { get; set; }
         public virtual DbSet<Answer> Answers { get; set; }
         public virtual DbSet<SurveyInfo> SurveyInfos { get; set; }
+        public virtual DbSet<Response> Responses { get; set; }
     }
 }

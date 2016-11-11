@@ -7,10 +7,15 @@
         <h1>Test Survey</h1>
     </div>
     <br />
+    
+    <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="6LdqlwoUAAAAAGdLW9UQ4ytcJVieip3worjS4lEH"></div>
+    </div>
+
     <h2>Pick one of surveys:</h2>
     <ul>
-        <li>@Html.ActionLink("First Survey", "Index", "Survey", routeValues: new { SurveyId = 2, userId = 1 }, htmlAttributes: null)</li>
-        <li>@Html.ActionLink("Second Survey", "Index", "Survey", routeValues: new { SurveyId = 3, userId = 2 }, htmlAttributes: null)</li>
-        <li>@Html.ActionLink("Third Survey", "Index", "Survey", routeValues: new { SurveyId = 4, userId = 3 }, htmlAttributes: null)</li>
+        <li>@Html.ActionLink("First Survey", "Index", "Survey", routeValues: new { SurveyId = 1, userId = 1 }, htmlAttributes: null)</li>
+        <li>@Html.ActionLink("Second Survey", "Index", "Survey", routeValues: new { SurveyId = 2, userId = 2 }, htmlAttributes: null)</li>
+        <li>@Html.ActionLink("Third Survey", "Index", "Survey", routeValues: new { SurveyId = 3, userId = 3 }, htmlAttributes: null)</li>
     </ul>
 </div>

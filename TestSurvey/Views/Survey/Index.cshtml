@@ -1,4 +1,4 @@
-﻿@model List<Question>
+﻿@model List<TestSurvey.Models.Question>
 @{
     ViewBag.Title = "Survey";
     <script type="text/javascript" src="~/Scripts/jquery.simplePagination.js"></script>
@@ -9,11 +9,13 @@
 <table>
     @foreach (var question in Model.ToList())
     {
+        var response = question.Responses.First(c => c.Respondent.Id == ViewBag.RespondentId);
+
         if (question.QuestionType.ToString() == "Text")
         {
             <tr>
                 <td>@Html.Label(question.Text)</td>
-                <td>@Html.TextBox("textbox", question.TypedAnswer ?? null, new { @class = "text-answer", questionId = question.Id.ToString() })</td>
+                <td>@Html.TextBox("textbox", response.TextValue ?? null, new {@class = "text-answer", questionId = question.Id.ToString()})</td>
             </tr>
         }
         else if (question.QuestionType.ToString() == "Checkbox")
@@ -23,16 +25,17 @@
                 <td>
                     @foreach (var answer in question.Answers)
                     {
-                        if (answer.IsChecked)
+                        var respAnswer = response.Answers?.FirstOrDefault(c => c.Id == answer.Id);
+                        if (respAnswer != null)
                         {
                             <div class="checkbox">
-                                <label><input type="checkbox" class="checkbox-answer" questionId=@question.Id checked />@answer.Text</label>
+                                <label><input type="checkbox" class="checkbox-answer" questionId=@question.Id answerId=@answer.Id checked />@answer.Text</label>
                             </div>
                         }
                         else
                         {
                             <div class="checkbox">
-                                <label><input type="checkbox" class="checkbox-answer" questionId=@question.Id />@answer.Text</label>
+                                <label><input type="checkbox" class="checkbox-answer" questionId=@question.Id answerId=@answer.Id />@answer.Text</label>
                             </div>
                         }
                     }
@@ -46,16 +49,17 @@
                 <td>
                     @foreach (var answer in question.Answers)
                     {
-                        if (answer.IsChecked)
+                        var respAnswer = response.Answers?.FirstOrDefault();
+                        if (respAnswer != null && respAnswer.Id == answer.Id)
                         {
                             <div class="radio">
-                                <label><input type="radio" class="radio-answer" name=@question.Id questionId=@question.Id checked />@answer.Text</label>
+                                <label><input type="radio" class="radio-answer" name=@question.Id questionId=@question.Id answerId=@answer.Id checked />@answer.Text</label>
                             </div>
                         }
                         else
                         {
                             <div class="radio">
-                                <label><input type="radio" class="radio-answer" name=@question.Id questionId=@question.Id />@answer.Text</label>
+                                <label><input type="radio" class="radio-answer" name=@question.Id questionId=@question.Id answerId=@answer.Id />@answer.Text</label>
                             </div>
                         }
                     }

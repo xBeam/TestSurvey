@@ -148,30 +148,39 @@ namespace TestSurvey.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RespondentInfo model)
+        public ActionResult Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                //var result = await UserManager.CreateAsync(user, model.Password);
-                //if (result.Succeeded)
-                //{
-                //    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                string encodedResponse = Request.Form["g-Recaptcha-Response"];
+                bool isCaptchaValid = (RecaptchaClass.Validate(encodedResponse) == "True" ? true : false);
+                if (isCaptchaValid)
+                {
+                    //var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                    //var result = await UserManager.CreateAsync(user, model.Password);
+                    //if (result.Succeeded)
+                    //{
+                    //    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
-                //    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //    // Send an email with this link
-                //    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                //    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                //    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    //    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                    //    // Send an email with this link
+                    //    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    //    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                //    return RedirectToAction("Index", "Home");
-                //}
+                    //    return RedirectToAction("Index", "Home");
+                    //}
 
-                db.RespondentInfos.Add(model);
+                    //db.RespondentInfos.Add(model);
 
-                db.SaveChanges();
+                    //db.SaveChanges();
 
-                //AddErrors(result);
+                    //AddErrors(result);
+                }
+                else
+                {
+                    TempData["recaptcha"] = "Pleasee verify that you are not a robot";
+                }
             }
 
             // If we got this far, something failed, redisplay form

@@ -6,23 +6,23 @@
 
     for (var i = 0; i < answers.length; i++) {
         jsonData.push({
-            Id: answers[i].attributes.questionid.value,
-            Text: answers[i].value
+            Question: answers[i].attributes.questionid.value,
+            TextValue: answers[i].value
         });
     }
 
     for (var r = 0; r < radios.length; r++) {
         if (radios[r].checked) {
             jsonData.push({
-                Id: radios[r].attributes.questionId.value,
-                Text: radios[r].closest('label').innerText,
-                IsChecked: true
+                Question: radios[r].attributes.questionId.value,
+                TextValue: radios[r].closest('label').innerText,
+                Answer: radios[r].attributes.answerId.value
             });
         } else {
             jsonData.push({
-                Id: radios[r].attributes.questionId.value,
-                Text: radios[r].closest('label').innerText,
-                IsChecked: false
+                Question: radios[r].attributes.questionId.value,
+                TextValue: radios[r].closest('label').innerText,
+                Answer: radios[r].attributes.answerId.value
             });
         }
     }
@@ -30,15 +30,15 @@
     for (var c = 0; c < checkboxes.length; c++) {
         if (checkboxes[c].checked) {
             jsonData.push({
-                Id: checkboxes[c].attributes.questionId.value,
-                Text: checkboxes[c].closest('label').innerText,
-                IsChecked: true
+                Question: checkboxes[c].attributes.questionId.value,
+                TextValue: checkboxes[c].closest('label').innerText,
+                Answer: radios[r].attributes.answerId.value
             });
         } else {
             jsonData.push({
-                Id: checkboxes[c].attributes.questionId.value,
-                Text: checkboxes[c].closest('label').innerText,
-                IsChecked: false
+                Question: checkboxes[c].attributes.questionId.value,
+                TextValue: checkboxes[c].closest('label').innerText,
+                Answer: radios[r].attributes.answerId.value
             });
         }
     }

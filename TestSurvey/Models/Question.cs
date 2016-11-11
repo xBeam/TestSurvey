@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-namespace TestSurvey
+
+namespace TestSurvey.Models
 {
     public enum QuestionTypes
     {
@@ -15,7 +16,6 @@ namespace TestSurvey
         public ICollection<Answer> Answers { get; set; }
         public SurveyInfo Survey { get; set; }
         public QuestionTypes QuestionType { get; set; }
-        public string TypedAnswer { get; set; }
-        public RespondentInfo Respondent { get; set; }
+        public ICollection<Response> Responses { get; set; }
     }
 }
